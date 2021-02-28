@@ -1,0 +1,257 @@
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.shape.Rectangle?>
+<?import Model.ModelCrossing?>
+
+<?import java.util.ArrayList?>
+<?import javafx.scene.text.Text?>
+<?import java.net.URL?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.paint.ImagePattern?>
+<GridPane fx:id="root" fx:controller="Controller.Gamefield" xmlns:fx="http://javafx.com/fxml"  >
+
+    <AnchorPane fx:id="outter_zone" GridPane.columnIndex="0" GridPane.rowIndex="0" prefHeight="800" minHeight="0" maxHeight="800" prefWidth="640" minWidth="0" maxWidth="640" >
+        <!-- Label nicht aus Anchorpane moven ( nimmt sonst nur Matrixfeld ein = zu klein = nicht sehbar-->
+
+        <fx:include fx:id="player" source="ViewPlayer.fxml"/>
+        <fx:include fx:id="ghosts" source="ViewGhost.fxml" GridPane.rowIndex="0" GridPane.columnIndex="0" prefHeight="800" minHeight="0" maxHeight="800"/>
+
+        <Circle fx:id="cherry" radius="20" visible="false">
+            <fill>
+                <ImagePattern>
+                    <image>
+                        <Image url="@/Icon/Cherry-broad-green.png"></Image>
+                    </image>
+                </ImagePattern>
+            </fill>
+        </Circle>
+
+
+
+    </AnchorPane>
+
+    <GridPane fx:id="gameovermatrix" GridPane.rowIndex="15" GridPane.columnIndex="0"  gridLinesVisible="false"  minHeight="800" minWidth="640">
+        <Label GridPane.rowIndex="1" text="GAME OVER" fx:id="gameover_text"  visible="false" ></Label>
+        <Button GridPane.halignment="CENTER" GridPane.rowIndex="2"  text="Restart" onAction="#Restart" fx:id="gameover_button_restart"   visible="false" ></Button>
+        <Button GridPane.rowIndex="3"  text="Back to Startscreen" onAction="#SwitchStartscreen" fx:id="gameover_button_quit"  visible="false" ></Button>
+
+    <columnConstraints>
+        <ColumnConstraints percentWidth="100" />
+    </columnConstraints>
+
+    <rowConstraints>
+        <RowConstraints percentHeight="35" />
+        <RowConstraints percentHeight="10" />
+        <RowConstraints percentHeight="10" />
+        <RowConstraints percentHeight="20" />
+        <RowConstraints percentHeight="25" />
+    </rowConstraints>
+
+    </GridPane>
+
+    <VBox spacing="5" GridPane.columnIndex="16" GridPane.rowIndex="2" alignment="TOP_CENTER" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+        <Label fx:id="highscore_text" text="SCORE"  textFill="white" textAlignment="CENTER" minWidth="180" alignment="CENTER"></Label>
+        <Label fx:id="highscore" text="0" textFill="white" textAlignment="CENTER" minWidth="50" alignment="CENTER"></Label>
+    </VBox>
+
+
+    <HBox spacing="5" GridPane.columnIndex="2"  GridPane.rowIndex="37">
+
+        <ImageView fx:id="life_img1" fitHeight="30" fitWidth="30">
+            <image>
+                <Image url="@/Icon/PacMan_icon.png" smooth="true" ></Image>
+            </image>
+        </ImageView>
+        <ImageView fx:id="life_img2" fitHeight="30" fitWidth="30">
+            <image>
+                <Image url="@/Icon/PacMan_icon.png"></Image>
+            </image>
+        </ImageView>
+        <ImageView fx:id="life_img3" fitHeight="30" fitWidth="30">
+            <image>
+                <Image url="@/Icon/PacMan_icon.png"></Image>
+            </image>
+        </ImageView>
+    </HBox>
+
+    <ImageView fx:id="cherry_imgView" GridPane.columnIndex="27" GridPane.rowIndex="37" fitWidth="30" fitHeight="30" visible="false">
+        <image>
+            <Image url="@/Icon/Cherry-broad-green.png"></Image>
+        </image>
+    </ImageView>
+
+    <!-- Kreuzungen in der ersten Reihe-->
+    <ModelCrossing fx:id="cross0" GridPane.columnIndex="2" GridPane.rowIndex="6" GridPane.valignment="TOP" right="true" left="false" up="false" down="true" GridPane.halignment="CENTER"/>
+    <ModelCrossing fx:id="cross1" GridPane.columnIndex="8" GridPane.rowIndex="6" GridPane.valignment="TOP" right="true" left="true" up="false" down="true"/>
+    <ModelCrossing fx:id="cross2" GridPane.columnIndex="14" GridPane.rowIndex="6" GridPane.valignment="TOP" right="false" left="true" up="false" down="true" GridPane.halignment="CENTER"/>
+    <ModelCrossing fx:id="cross3" GridPane.columnIndex="17" GridPane.rowIndex="6" GridPane.valignment="TOP" right="true" left="false" up="false" down="true" GridPane.halignment="CENTER"/>
+    <ModelCrossing fx:id="cross4" GridPane.columnIndex="24" GridPane.rowIndex="6" GridPane.valignment="TOP" right="true" left="true" up="false" down="true"/>
+    <ModelCrossing fx:id="cross5" GridPane.columnIndex="29" GridPane.rowIndex="6" GridPane.valignment="TOP" right="false" left="true" up="false" down="true" GridPane.halignment="CENTER"/>
+
+    <!-- Kreuzungen in der zweiten Reihe-->
+    <ModelCrossing fx:id="cross6" GridPane.columnIndex="2" GridPane.rowIndex="10" GridPane.valignment="TOP" right="true" left="false" up="true" down="true" GridPane.halignment="CENTER"/>
+    <ModelCrossing fx:id="cross7" GridPane.columnIndex="8" GridPane.rowIndex="10" GridPane.valignment="TOP" right="true" left="true" up="true" down="true"/>
+    <ModelCrossing fx:id="cross8" GridPane.columnIndex="11" GridPane.rowIndex="10" GridPane.valignment="TOP" right="true" left="true" up="false" down="true"/>
+    <ModelCrossing fx:id="cross9" GridPane.columnIndex="14" GridPane.rowIndex="10" GridPane.valignment="TOP" right="true" left="true" up="true" down="false" GridPane.halignment="CENTER"/>
+    <ModelCrossing fx:id="cross10" GridPane.columnIndex="17" GridPane.rowIndex="10" GridPane.valignment="TOP" right="true" left="true" up="true" down="false" GridPane.halignment="CENTER"/>
+    <ModelCrossing fx:id="cross11" GridPane.columnIndex="21" GridPane.rowIndex="10" GridPane.valignment="TOP" right="true" left="true" up="false" down="true"/>
+    <ModelCrossing fx:id="cross12" GridPane.columnIndex="24" GridPane.rowIndex="10" GridPane.valignment="TOP" right="true" left="true" up="true" down="true"/>
+    <ModelCrossing fx:id="cross13" GridPane.columnIndex="29" GridPane.rowIndex="10" GridPane.valignment="TOP" right="false" left="true" up="true" down="true" GridPane.halignment="CENTER"/>
+
+    <!-- Kreuzungen in der dritten Reihe-->
+    <ModelCrossing fx:id="cross14" GridPane.columnIndex="2" GridPane.rowIndex="13" GridPane.valignment="TOP" right="true" left="false" up="true" down="false" GridPane.halignment="CENTER"/>
+    <ModelCrossing fx:id="cross15" GridPane.columnIndex="8" GridPane.rowIndex="13" GridPane.valignment="TOP" right="false" left="true" up="true" down="true"/>
+    <ModelCrossing fx:id="cross16" GridPane.columnIndex="11" GridPane.rowIndex="13" GridPane.valignment="TOP" right="true" left="false" up="true" down="false"/>
+    <ModelCrossing fx:id="cross17" GridPane.columnIndex="14" GridPane.rowIndex="13" GridPane.valignment="TOP" right="false" left="true" up="false" down="true" GridPane.halignment="CENTER"/>
+    <ModelCrossing fx:id="cross18" GridPane.columnIndex="17" GridPane.rowIndex="13" GridPane.valignment="TOP" right="true" left="false" up="false" down="true" GridPane.halignment="CENTER"/>
+    <ModelCrossing fx:id="cross19" GridPane.columnIndex="21" GridPane.rowIndex="13" GridPane.valignment="TOP" right="false" left="true" up="true" down="false"/>
+    <ModelCrossing fx:id="cross20" GridPane.columnIndex="24" GridPane.rowIndex="13" GridPane.valignment="TOP" right="true" left="false" up="true" down="true"/>
+    <ModelCrossing fx:id="cross21" GridPane.columnIndex="29" GridPane.rowIndex="13" GridPane.valignment="TOP" right="false" left="true" up="true" down="false" GridPane.halignment="CENTER"/>
+
+    <!-- Kreuzungen in der vierten Reihe-->
+    <ModelCrossing fx:id="cross22" GridPane.columnIndex="11" GridPane.rowIndex="16" GridPane.valignment="TOP" right="true" left="false" up="false" down="true"/>
+    <ModelCrossing fx:id="cross23" GridPane.columnIndex="14" GridPane.rowIndex="16" GridPane.valignment="TOP" right="true" left="true" up="true" down="false" GridPane.halignment="CENTER"/>
+    <ModelCrossing fx:id="cross24" GridPane.columnIndex="17" GridPane.rowIndex="16" GridPane.valignment="TOP" right="true" left="true" up="true" down="false" GridPane.halignment="CENTER"/>
+    <ModelCrossing fx:id="cross25" GridPane.columnIndex="21" GridPane.rowIndex="16" GridPane.valignment="TOP" right="false" left="true" up="false" down="true"/>
+
+    <!-- Kreuzungen in der fuenften Reihe-->
+    <ModelCrossing fx:id="cross26" GridPane.columnIndex="2" GridPane.rowIndex="19" GridPane.valignment="TOP" right="true" left="false" up="false" down="false" GridPane.halignment="CENTER"/>
+    <ModelCrossing fx:id="cross27" GridPane.columnIndex="8" GridPane.rowIndex="19" GridPane.valignment="TOP" right="true" left="true" up="true" down="true"/>
+    <ModelCrossing fx:id="cross28" GridPane.columnIndex="11" GridPane.rowIndex="19" GridPane.valignment="TOP" right="false" left="true" up="true" down="true"/>
+    <ModelCrossing fx:id="cross29" GridPane.columnIndex="21" GridPane.rowIndex="19" GridPane.valignment="TOP" right="true" left="false" up="true" down="true"/>
+    <ModelCrossing fx:id="cross30" GridPane.columnIndex="24" GridPane.rowIndex="19" GridPane.valignment="TOP" right="true" left="true" up="true" down="true"/>
+    <ModelCrossing fx:id="cross31" GridPane.columnIndex="29" GridPane.rowIndex="19" GridPane.valignment="TOP" right="false" left="true" up="false" down="false" GridPane.halignment="CENTER"/>
+
+    <!-- Kreuzungen in der sechsten Reihe-->
+    <ModelCrossing fx:id="cross32" GridPane.columnIndex="11" GridPane.rowIndex="22" right="true" left="false" up="true" down="true" GridPane.valignment="TOP"/>
+    <ModelCrossing fx:id="cross33" GridPane.columnIndex="21" GridPane.rowIndex="22" right="false" left="true" up="true" down="true" GridPane.valignment="TOP"/>
+
+    <!-- Kreuzungen in der siebten Reihe-->
+    <ModelCrossing fx:id="cross34" GridPane.columnIndex="2" GridPane.rowIndex="25" right="true" left="false" up="false" down="true" GridPane.valignment="TOP" GridPane.halignment="CENTER"/>
+    <ModelCrossing fx:id="cross35" GridPane.columnIndex="8" GridPane.rowIndex="25" right="true" left="true" up="true" down="true" GridPane.valignment="TOP"/>
+    <ModelCrossing fx:id="cross36" GridPane.columnIndex="11" GridPane.rowIndex="25" right="true" left="true" up="true" down="false" GridPane.valignment="TOP"/>
+    <ModelCrossing fx:id="cross37" GridPane.columnIndex="14" GridPane.rowIndex="25" right="false" left="true" up="false" down="true" GridPane.valignment="TOP" GridPane.halignment="CENTER"/>
+    <ModelCrossing fx:id="cross38" GridPane.columnIndex="17" GridPane.rowIndex="25" right="true" left="false" up="false" down="true" GridPane.valignment="TOP" GridPane.halignment="CENTER"/>
+    <ModelCrossing fx:id="cross39" GridPane.columnIndex="21" GridPane.rowIndex="25" right="true" left="true" up="true" down="false" GridPane.valignment="TOP"/>
+    <ModelCrossing fx:id="cross40" GridPane.columnIndex="24" GridPane.rowIndex="25" right="true" left="true" up="true" down="true" GridPane.valignment="TOP"/>
+    <ModelCrossing fx:id="cross41" GridPane.columnIndex="29" GridPane.rowIndex="25" right="false" left="true" up="false" down="true" GridPane.valignment="TOP" GridPane.halignment="CENTER"/>
+
+    <!-- Kreuzungen in der achten Reihe-->
+    <ModelCrossing fx:id="cross42" GridPane.columnIndex="2" GridPane.rowIndex="28" right="true" left="false" up="true" down="false" GridPane.valignment="TOP" GridPane.halignment="CENTER"/>
+    <ModelCrossing fx:id="cross43" GridPane.columnIndex="5" GridPane.rowIndex="28" right="false" left="true" up="false" down="true" GridPane.valignment="TOP"/>
+    <ModelCrossing fx:id="cross44" GridPane.columnIndex="8" GridPane.rowIndex="28" right="true" left="false" up="true" down="true" GridPane.valignment="TOP"/>
+    <ModelCrossing fx:id="cross45" GridPane.columnIndex="11" GridPane.rowIndex="28" right="true" left="true" up="false" down="true" GridPane.valignment="TOP"/>
+    <ModelCrossing fx:id="cross46" GridPane.columnIndex="14" GridPane.rowIndex="28" right="true" left="true" up="true" down="false" GridPane.valignment="TOP" GridPane.halignment="CENTER"/>
+    <ModelCrossing fx:id="cross47" GridPane.columnIndex="17" GridPane.rowIndex="28" right="true" left="true" up="true" down="false" GridPane.valignment="TOP" GridPane.halignment="CENTER"/>
+    <ModelCrossing fx:id="cross48" GridPane.columnIndex="21" GridPane.rowIndex="28" right="true" left="true" up="false" down="true" GridPane.valignment="TOP"/>
+    <ModelCrossing fx:id="cross49" GridPane.columnIndex="24" GridPane.rowIndex="28" right="false" left="true" up="true" down="true" GridPane.valignment="TOP"/>
+    <ModelCrossing fx:id="cross50" GridPane.columnIndex="27" GridPane.rowIndex="28" right="true" left="false" up="false" down="true" GridPane.valignment="TOP"/>
+    <ModelCrossing fx:id="cross51" GridPane.columnIndex="29" GridPane.rowIndex="28" right="false" left="true" up="true" down="false" GridPane.valignment="TOP" GridPane.halignment="CENTER"/>
+
+    <!-- Kreuzungen in der neunten Reihe-->
+    <ModelCrossing fx:id="cross52" GridPane.columnIndex="2" GridPane.rowIndex="31" right="true" left="false" up="false" down="true" GridPane.valignment="TOP" GridPane.halignment="CENTER"/>
+    <ModelCrossing fx:id="cross53" GridPane.columnIndex="5" GridPane.rowIndex="31" right="true" left="true" up="true" down="false" GridPane.valignment="TOP"/>
+    <ModelCrossing fx:id="cross54" GridPane.columnIndex="8" GridPane.rowIndex="31" right="false" left="true" up="true" down="false" GridPane.valignment="TOP"/>
+    <ModelCrossing fx:id="cross55" GridPane.columnIndex="11" GridPane.rowIndex="31" right="true" left="false" up="true" down="false" GridPane.valignment="TOP" />
+    <ModelCrossing fx:id="cross56" GridPane.columnIndex="14" GridPane.rowIndex="31" right="false" left="true" up="false" down="true" GridPane.valignment="TOP" GridPane.halignment="CENTER"/>
+    <ModelCrossing fx:id="cross57" GridPane.columnIndex="17" GridPane.rowIndex="31" right="true" left="false" up="false" down="true" GridPane.valignment="TOP" GridPane.halignment="CENTER"/>
+    <ModelCrossing fx:id="cross58" GridPane.columnIndex="21" GridPane.rowIndex="31" right="false" left="true" up="true" down="false" GridPane.valignment="TOP"/>
+    <ModelCrossing fx:id="cross59" GridPane.columnIndex="24" GridPane.rowIndex="31" right="true" left="false" up="true" down="false" GridPane.valignment="TOP"/>
+    <ModelCrossing fx:id="cross60" GridPane.columnIndex="27" GridPane.rowIndex="31" right="true" left="true" up="true" down="false" GridPane.valignment="TOP"/>
+    <ModelCrossing fx:id="cross61" GridPane.columnIndex="29" GridPane.rowIndex="31" right="false" left="true" up="false" down="true" GridPane.valignment="TOP" GridPane.halignment="CENTER"/>
+
+    <!-- Kreuzungen in der zehnten Reihe-->
+    <ModelCrossing fx:id="cross62" GridPane.columnIndex="2" GridPane.rowIndex="34" right="true" left="false" up="true" down="false" GridPane.valignment="TOP" GridPane.halignment="CENTER"/>
+    <ModelCrossing fx:id="cross63" GridPane.columnIndex="14" GridPane.rowIndex="34" right="true" left="true" up="true" down="false" GridPane.valignment="TOP" GridPane.halignment="CENTER"/>
+    <ModelCrossing fx:id="cross64" GridPane.columnIndex="17" GridPane.rowIndex="34" right="true" left="true" up="true" down="false" GridPane.valignment="TOP" GridPane.halignment="CENTER"/>
+    <ModelCrossing fx:id="cross65" GridPane.columnIndex="29" GridPane.rowIndex="34" right="false" left="true" up="true" down="false" GridPane.valignment="TOP" GridPane.halignment="CENTER"/>
+
+    <!-- Kreuzungen an Pacmans Startposition-->
+    <ModelCrossing fx:id="cross66" GridPane.columnIndex="16" GridPane.rowIndex="28" right="true" left="true" up="false" down="false" GridPane.valignment="TOP"/>
+    <!-- Kreuzungen an Geister Startposition-->
+    <ModelCrossing fx:id="cross67" GridPane.columnIndex="16" GridPane.rowIndex="16" right="true" left="true" up="false" down="false" GridPane.valignment="TOP"/>
+    <ModelCrossing fx:id="cross68" GridPane.columnIndex="16" GridPane.rowIndex="19" right="false" left="false" up="true" down="false" GridPane.valignment="TOP"/>
+
+    <fx:define>
+        <ArrayList fx:id="cross" >
+            <fx:reference source="cross0"/>
+            <fx:reference source="cross1"/>
+            <fx:reference source="cross2"/>
+            <fx:reference source="cross3"/>
+            <fx:reference source="cross4"/>
+            <fx:reference source="cross5"/>
+            <fx:reference source="cross6"/>
+            <fx:reference source="cross7"/>
+            <fx:reference source="cross8"/>
+            <fx:reference source="cross9"/>
+            <fx:reference source="cross10"/>
+            <fx:reference source="cross11"/>
+            <fx:reference source="cross12"/>
+            <fx:reference source="cross13"/>
+            <fx:reference source="cross14"/>
+            <fx:reference source="cross15"/>
+            <fx:reference source="cross16"/>
+            <fx:reference source="cross17"/>
+            <fx:reference source="cross18"/>
+            <fx:reference source="cross19"/>
+            <fx:reference source="cross20"/>
+            <fx:reference source="cross21"/>
+            <fx:reference source="cross22"/>
+            <fx:reference source="cross23"/>
+            <fx:reference source="cross24"/>
+            <fx:reference source="cross25"/>
+            <fx:reference source="cross26"/>
+            <fx:reference source="cross27"/>
+            <fx:reference source="cross28"/>
+            <fx:reference source="cross29"/>
+            <fx:reference source="cross30"/>
+            <fx:reference source="cross31"/>
+            <fx:reference source="cross32"/>
+            <fx:reference source="cross33"/>
+            <fx:reference source="cross34"/>
+            <fx:reference source="cross35"/>
+            <fx:reference source="cross36"/>
+            <fx:reference source="cross37"/>
+            <fx:reference source="cross38"/>
+            <fx:reference source="cross39"/>
+            <fx:reference source="cross40"/>
+            <fx:reference source="cross41"/>
+            <fx:reference source="cross42"/>
+            <fx:reference source="cross43"/>
+            <fx:reference source="cross44"/>
+            <fx:reference source="cross45"/>
+            <fx:reference source="cross46"/>
+            <fx:reference source="cross47"/>
+            <fx:reference source="cross48"/>
+            <fx:reference source="cross49"/>
+            <fx:reference source="cross50"/>
+            <fx:reference source="cross51"/>
+            <fx:reference source="cross52"/>
+            <fx:reference source="cross53"/>
+            <fx:reference source="cross54"/>
+            <fx:reference source="cross55"/>
+            <fx:reference source="cross56"/>
+            <fx:reference source="cross57"/>
+            <fx:reference source="cross58"/>
+            <fx:reference source="cross59"/>
+            <fx:reference source="cross60"/>
+            <fx:reference source="cross61"/>
+            <fx:reference source="cross62"/>
+            <fx:reference source="cross63"/>
+            <fx:reference source="cross64"/>
+            <fx:reference source="cross65"/>
+            <fx:reference source="cross66"/>
+            <fx:reference source="cross67"/>
+            <fx:reference source="cross68"/>
+
+
+        </ArrayList>
+    </fx:define>
+
+
+
+</GridPane>
+

@@ -1,0 +1,184 @@
+
+#root
+{
+ -fx-pref-height:800px;
+ -fx-pref-width:640px;
+ -fx-grid-lines-color:blue;
+ -fx-background-image: url("../Images/Pac_Man_final.png");
+ -fx-background-repeat: stretch;
+ -fx-grid-lines-visible: false;
+}
+
+#hshl_matrix
+{
+-fx-pref-height:500px;
+ -fx-pref-width:1000px;
+ -fx-grid-lines-color:blue;
+ -fx-background-image: url("../Images/hshl_back1.png");
+ -fx-background-repeat: stretch;
+ -fx-background-size: 1000 500;
+ -fx-grid-lines-visible: false;
+}
+
+#root_start
+{
+ -fx-background-image: url("../Images/startscreen.png");
+}
+
+#options
+{
+ -fx-background-image: url("../Images/pac_optionen_640_800.png");
+}
+
+#resume_bt,#highscore_bt,#options_bt,#quit_bt
+{
+ -fx-cursor: hand;
+}
+
+#Highscore
+{
+ -fx-background-image: url("../Images/Leaderboard640x800.png");
+}
+
+.text {
+    -fx-font-family: 'Press Start 2P', 'Regular';
+}
+
+#highscore
+{
+ -fx-font-color: blue ;
+ -fx-font-size: 25px;
+}
+#highscore_text
+{
+
+ -fx-font-size: 30px;
+}
+
+#root_pause
+{
+ -fx-background-image: url("../Images/Leaderboard.png");
+}
+
+#life
+{
+ -fx-background-color: white;
+}
+
+#life_img1
+{
+ -fx-width: 10;
+ -fx-height: 10;
+}
+
+#gameover_text
+{
+ -fx-font-size: 70px;
+ -fx-text-fill: yellow;
+ -fx-font-weight: bold;
+}
+
+#gameover_text_restart
+{
+ -fx-font-size: 30px;
+ -fx-text-fill: yellow;
+ -fx-font-weight: bold;
+}
+
+#gameover_button_quit
+{
+ -fx-font-size: 30px;
+ -fx-text-fill: yellow;
+ -fx-font-weight: bold;
+ -fx-background-color: none;
+}
+
+#gameover_button_restart
+{
+ -fx-font-size: 30px;
+ -fx-text-fill: yellow;
+ -fx-font-weight: bold;
+ -fx-background-color: none;
+}
+
+#gameover_button_quit:hover,#gameover_button_restart:hover
+{
+ -fx-text-fill: blue;
+ -fx-cursor: hand;
+}
+
+#backbt
+{
+ -fx-background-color:black;
+}
+
+
+#highscore_list:hover,#goback:hover,#game_options:hover,#quit_game:hover,#backbt:hover,
+#resume_bt:hover,#highscore_bt:hover,#options_bt:hover,#quit_bt:hover,#start:hover,#map_choose:hover,
+#joystick_text:hover,#audio_text:hover,#box_resolution:hover,#submit_name:hover
+{
+ -fx-background-color:blue !important;
+ -fx-cursor: hand;
+}
+
+#start,#highscore_list,#game_options,#quit_game,#audio_text,#joystick_text,#mute,#map_choose,#box_resolution,
+#highscore_bt,#options_bt,#resume_bt,#quit_bt,#backbt,#submit_name
+{
+ -fx-background-color: black;
+ -fx-background-insets: 0;
+ -fx-background-radius: 30;
+ -fx-border-color: blue;
+ -fx-border-radius: 30;
+ -fx-border-width: 4;
+ -fx-text-fill: white;
+ -fx-font-family: url;
+ -fx-font-size: 14pt;
+ -fx-text-alignment: center;
+ -fx-cursor: hand;
+}
+
+
+#resume_bt,#highscore_bt,#options_bt,#quit_bt
+{
+ -fx-background-color:none;
+}
+
+#mute:hover
+{
+ -fx-background-color:black;
+ -fx-cursor: none;
+}
+
+#user_input_area
+{
+ -fx-background-color: black;
+ -fx-border-color: white;
+ -fx-border-style: solid;
+ -fx-grid-lines-visible: false;
+}
+
+#username_text
+{
+ -fx-font-size: 40px;
+ -fx-font-family: 'Press Start 2P', 'Regular';
+}
+
+#resolution,#goback,#joystick
+{
+ -fx-background-color: black;
+ -fx-background-insets: 0;
+ -fx-background-radius: 30;
+ -fx-border-color: blue;
+ -fx-border-radius: 30;
+ -fx-border-width: 4;
+ -fx-text-fill: white;
+ -fx-font-size: 14pt;
+ -fx-cursor: none;
+}
+
+#mute,#resolution,#joystick
+{
+ -fx-border-style:none !important;
+ -fx-border-color:none;
+ -fx-background-color:none;
+}

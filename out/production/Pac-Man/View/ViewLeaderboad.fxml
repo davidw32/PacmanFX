@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane fx:id="root_pause" gridLinesVisible="false" xmlns:fx="http://javafx.com/fxml" fx:controller="Controller.PauseScreen" >
+    <children>
+        <VBox GridPane.fillHeight="TRUE" GridPane.fillWidth="TRUE" alignment="CENTER" spacing="10" GridPane.columnIndex="0" GridPane.rowIndex="0" >
+
+        </VBox>
+    </children>
+
+    <columnConstraints>
+        <ColumnConstraints percentWidth="20"/>
+        <ColumnConstraints percentWidth="50"/>
+        <ColumnConstraints percentWidth="30"/>
+    </columnConstraints>
+
+    <rowConstraints>
+        <RowConstraints percentHeight="10"/>
+        <RowConstraints percentHeight="10"/>
+        <RowConstraints percentHeight="10"/>
+        <RowConstraints percentHeight="10"/>
+        <RowConstraints percentHeight="10"/>
+        <RowConstraints percentHeight="10"/>
+        <RowConstraints percentHeight="10"/>
+        <RowConstraints percentHeight="10"/>
+        <RowConstraints percentHeight="10"/>
+        <RowConstraints percentHeight="10"/>
+
+        <!--Abstand ca 10 % oben und unten -->
+
+    </rowConstraints>
+
+</GridPane>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.Circle?>
+
+<?import javafx.scene.paint.ImagePattern?>
+<?import javafx.scene.image.Image?>
+<AnchorPane fx:controller="Controller.Ghost" xmlns:fx="http://javafx.com/fxml" >
+<Circle fx:id="ghost1" radius="20" centerX="320" centerY="380">
+</Circle>
+<Circle fx:id="ghost2" radius="20" centerX="320" centerY="380">
+</Circle>
+<Circle fx:id="ghost3" radius="20" centerX="320" centerY="380">
+</Circle>
+<Circle fx:id="ghost4" radius="20" centerX="320" centerY="380">
+</Circle>
+</AnchorPane>

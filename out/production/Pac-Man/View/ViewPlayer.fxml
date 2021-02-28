@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.Circle?>
+
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.paint.ImagePattern?>
+<Pane fx:controller="Controller.Player" xmlns:fx="http://javafx.com/fxml">
+    <Circle fx:id="pacman"   radius="20" centerX="320" centerY="561">
+        <fill>
+            <ImagePattern>
+                <image>
+                    <Image fx:id="pacman_img" url="@/Icon/PAC_4_Frames.gif"></Image>
+                </image>
+            </ImagePattern>
+        </fill>
+    </Circle>
+</Pane>
+
+

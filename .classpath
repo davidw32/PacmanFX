@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="Test"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/javafx-sdk-11.0"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/lib"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/junit:junit:4.12"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/lib1"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/lib2"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/jinput-2.0.9"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/jinput-2.0.9-natives-all"/>
+	<classpathentry kind="output" path="out/production/Pac-Man"/>
+</classpath>
